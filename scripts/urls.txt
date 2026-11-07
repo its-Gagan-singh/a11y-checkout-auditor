@@ -1,0 +1,13 @@
+# One page per line. Lines starting with # are ignored.
+# Replace any that no longer load. Aim for 10 checkout / cart / payment-form pages
+# from public demo shops (never enter real card details on any page).
+https://www.w3.org/WAI/demos/bad/before/home.html
+https://www.w3.org/WAI/demos/bad/after/home.html
+https://www.saucedemo.com/
+https://demo.nopcommerce.com/login
+https://demo.opencart.com/
+https://magento.softwaretestingboard.com/customer/account/login/
+https://automationexercise.com/login
+https://demo.prestashop.com/
+https://practicetestautomation.com/practice-test-login/
+https://the-internet.herokuapp.com/login

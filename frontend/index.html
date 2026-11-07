@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout Auditor: accessibility check for payment pages</title>
+  <meta name="description" content="Audit a payment checkout page against WCAG 2.0 and Section 508 and get a ranked list of fixes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <h1>Checkout Auditor</h1>
+    <p>Paste a payment or checkout page. Get a WCAG 2.0 / Section 508 score and a ranked list of fixes.</p>
+  </header>
+
+  <main id="main">
+    <form id="audit-form" class="audit-form" novalidate>
+      <label for="url">Page address</label>
+      <div class="row">
+        <input id="url" name="url" type="url" inputmode="url" autocomplete="url"
+               placeholder="https://example.com/checkout" required aria-describedby="url-hint url-error">
+        <button type="submit" id="submit-btn">Audit page</button>
+      </div>
+      <p id="url-hint" class="hint">Public pages only. Try <button type="button" class="link-button" id="sample-btn">a sample page with known problems</button>.</p>
+      <p id="url-error" class="field-error" hidden></p>
+    </form>
+
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+
+    <section id="results" aria-labelledby="results-heading" hidden>
+      <h2 id="results-heading" tabindex="-1">Audit results</h2>
+
+      <div class="receipt">
+        <p class="receipt-url" id="r-url"></p>
+        <dl class="receipt-lines" id="r-lines"></dl>
+        <p class="receipt-total">
+          <span>Accessibility score</span>
+          <strong id="r-score"></strong>
+        </p>
+        <p class="receipt-grade" id="r-grade"></p>
+      </div>
+
+      <h3>Fixes, most important first</h3>
+      <ol id="fix-list" class="fix-list"></ol>
+
+      <details id="alt-block" class="extra">
+        <summary>Suggested alt text for images without it</summary>
+        <ul id="alt-list"></ul>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Automated checks find roughly a third of accessibility problems. Test with a screen reader and keyboard too.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

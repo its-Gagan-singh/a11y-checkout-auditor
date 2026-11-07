@@ -1,0 +1,5 @@
+# Optional: real image-captioning model (BLIP) for alt-text suggestions.
+# Large download (~1 GB with torch). Enable with: USE_ML_ALT=1
+torch
+transformers
+pillow
